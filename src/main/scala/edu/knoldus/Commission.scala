@@ -10,7 +10,7 @@ case class ClientSideCommission(value: Int) extends Commission(value: Int)
 
 case class StreetSideCommission(value: Int) extends Commission(value: Int)
 
-sealed trait CommissionDisplay {
+private sealed trait CommissionDisplay {
   def totalDisplayCommission: String
 }
 
@@ -23,7 +23,7 @@ class TotalCommission[T] {
   }
 }
 
-object TotalCommission {
+private object TotalCommission {
 
   implicit class TotalCommissionEx[T](val genericList: List[T]) extends CommissionDisplay {
     def totalDisplayCommission: String = {
@@ -54,7 +54,7 @@ object TotalCommission {
   }
 }
 
-private object Application extends App {
+object Application extends App {
   val firstClient = new ClientSideCommission(2)
   val secondClient = new ClientSideCommission(2)
   val thirdClient = new ClientSideCommission(2)
