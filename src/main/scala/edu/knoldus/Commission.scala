@@ -21,7 +21,6 @@ class TotalCommission[T] {
   def getTotalCommission(list: List[T]): String = {
     list.totalDisplayCommission
   }
-
 }
 
 object TotalCommission {
@@ -41,7 +40,6 @@ object TotalCommission {
           case _ => "No Matching"
         }
       }
-
       internalSumFunc(genericList, 0, false, false)
     }
 
@@ -54,7 +52,6 @@ object TotalCommission {
       }
     }
   }
-
 }
 
 private object Application extends App {
